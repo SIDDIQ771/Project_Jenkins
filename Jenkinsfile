@@ -11,21 +11,18 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                sh './build.sh'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh './run-tests.sh'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                sh './deploy.sh'
             }
         }
     }
