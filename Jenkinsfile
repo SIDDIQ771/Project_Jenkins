@@ -25,6 +25,7 @@ pipeline {
         input message: 'Deploy to production?', ok: 'Yes, deploy'
         sh './deploy-production.sh' // Use a deployment script
       }
+        }
 
         stage('Deployed Changes') {
             steps {
