@@ -20,7 +20,14 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy to Production') {
+      steps {
+        input message: 'Deploy to production?', ok: 'Yes, deploy'
+        sh './deploy-production.sh' // Use a deployment script
+      }
+        }
+
+        stage('Deployed Changes') {
             steps {
                 echo 'Deploying application...'
             }
